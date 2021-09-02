@@ -2,6 +2,7 @@
 function App() {
 
   const convertirABase64 = (archivo) => {
+    //Las siguientes líneas son para convertir varios archivos a Base64
   // const convertirABase64 = (archivos) => {
     // Array.from(archivos).forEach(archivo =>{
       var reader = new FileReader();
@@ -11,9 +12,10 @@ function App() {
       // you need to access and pass the individual file objects in that list, eg readAsDataURL(files[0])
       reader.readAsDataURL(archivo[0]);
       reader.onload=function(){
-        var arrayAuxiliar=[]; 
+        var arrayAuxiliar=[];
         var base64 = reader.result;
         console.log(base64);
+        // Cortar el string a partir de la coma
         arrayAuxiliar=base64.split(',');
         console.log(arrayAuxiliar[1]);
       }
